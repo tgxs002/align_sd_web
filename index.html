@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Better Aligning Text-to-Image Models with Human Preference">
+  <meta name="keywords" content="PATS, Feature Matching, Optimal Transportation, Patch Area Transportation">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Better Aligning Text-to-Image Models with Human Preference</title>
+
+
+  </script>
+
+  <!-- <script type="module"
+          src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script> -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <!-- <script src="https://unpkg.com/interactjs/dist/interact.min.js"></script> -->
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" href="static/slick/slick.css"/>
+  <link rel="stylesheet" type="text/css" href="static/slick/slick-theme.css"/>
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container">
+      <div class="container has-text-centered">
+        <h1 class="title is-1 publication-title">
+        Better Aligning Text-to-Image Models with Human Preference
+        </h1>
+        <!-- <h1 class="title is-size-3" style="color:#5a6268;">ICCV 2023</h1> -->
+        <div class="is-size-5 publication-authors">
+          <div class="author-block">
+            <a href="https://github.com/tgxs002">Xiaoshi Wu</a><sup>1</sup>,
+          </div>
+          <div class="author-block">
+            <a href="https://keqiangsun.github.io/">Keqiang Sun</a><sup>1</sup>,
+          </div>
+          <div class="author-block">
+            <a href="https://zhufengx.github.io/">Feng Zhu</a><sup>2</sup>,
+          </div>
+          <div class="author-block">
+            <a href="https://scholar.google.com/citations?user=1c9oQNMAAAAJ&hl=en">Rui Zhao</a><sup>2, 3</sup>,
+          </div>
+          <div class="author-block">
+            <a href="https://www.ee.cuhk.edu.hk/~hsli/">Hongsheng Li</a><sup>1, 4</sup>,
+          </div>
+        </div>
+
+        <div class="is-size-5 publication-authors">
+          <span class="author-block"><sup>1</sup>Multimedia Laboratory, The Chinese University of Hong Kong</span>
+          <span class="author-block"><sup>2</sup>SenseTime Research</span>
+          <br>
+          <span class="author-block"><sup>3</sup>Qing Yuan Research Institute, Shanghai Jiao Tong University</span>
+          <br>
+          <span class="author-block"><sup>4</sup>Centre for Perceptual and Interactive Intelligence (CPII)</span>
+        </div>
+
+        <div class="column has-text-centered">
+          <div class="publication-links">
+            <!-- PDF Link. -->
+            <span class="link-block">
+              <a href="https://arxiv.org/pdf/2303.TBD.pdf"
+                  class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                    <i class="fas fa-file-pdf"></i>
+                </span>
+                <span>Paper</span>
+              </a>
+            </span>
+            <span class="link-block">
+              <a href="https://github.com/tgxs002/align_sd"
+                 class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                    <i class="fab fa-github"></i>
+                </span>
+                <span>Code</span>
+                </a>
+            </span>
+            <span class="link-block">
+              <a href="https://mycuhk-my.sharepoint.com/:u:/g/personal/1155172150_link_cuhk_edu_hk/ESEbOt5yCVVMixzrrtVyEgQBAd3v_6UXSX7sTYhXdQ2FuQ?e=3L7dbe"
+                  class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                    <i class="fas fa-file"></i>
+                </span>
+                <span>Supplementary</span>
+              </a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="has-text-centered">
+        <h2 class="title is-3">Abstract</h2>
+        <hr/>
+        <h6 style="color:#8899a5" class="text-center"> 
+          TL;DR: Stable Diffusion can be improved via learning from human preferences. The trained model is better aligned <br> with user intentions, and also produce images with less artifacts, such as weird limbs and faces.
+        </h6>
+        </br>
+        <div class="has-text-centered">
+          <img style="width: 100%;" src="static/assets/github_banner.png"
+               alt="Banner."/>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="columns is-centered has-text-centered">
+      <!-- <div class="column is-four-fifths"> -->
+        <div class="content has-text-justified">
+          <p>
+            Recent years have witnessed a rapid growth of deep generative models, with text-to-image 
+            models gaining significant attention from the public. However, existing models often generate 
+            images that do not align well with human aesthetic preferences, such as awkward combinations 
+            of limbs and facial expressions. To address this issue, we collect a dataset of human choices 
+            on generated images from the Stable Foundation Discord channel. Our experiments demonstrate 
+            that current evaluation metrics for generative models do not correlate well with human choices. 
+            Thus, we train a human preference classifier with the collected dataset and derive a Human Preference Score (HPS) 
+            based on the classifier. Using the HPS, we propose a simple yet effective method to adapt Stable Diffusion 
+            to better align with human aesthetic preferences. Our experiments show that the HPS outperforms CLIP in 
+            predicting human choices and has good generalization capability towards images generated from other models. 
+            By tuning Stable Diffusion with the guidance of the HPS, the adapted model is able to generate images 
+            that are more preferred by human users.
+          </p>
+        </div>
+      </div>
+    <!-- </div> -->
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="content has-text-justified">
+      <h2 class="title is-3 has-text-centered"><p>Pipeline Overview</p></h2>
+      <hr/>
+      <div class="has-text-centered">
+        <img style="width: 100%;" src="static/assets/overview.png",
+             alt="pipeline."/>
+      </div>
+      <br/>
+      <p>
+        <strong>Left</strong>: We firstly train a human preference classifier to predict the human choice based on the prompt text, 
+        and then derive human preference score (HPS) based on the trained classifier, which complements image quality assessments by incorporating human aesthetic preferences.
+        <strong>Right</strong>: adapting Stable Diffusion to generate preferable images. During training, the Stable Diffusion is tuned to associate the concept of non-prefer with the prompt prefix [Identifier]. 
+        During inference, [Identifier] is used as the negative prompt in classifier free guidance.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="content has-text-justified">
+      <h2 class="title is-3 has-text-centered"><p>Results</p></h2>
+      <hr/>
+      <p>
+        The model trained with human preferences generates images that better align with users' intentions and have less artifacts. More visualization can be found in the supplementary materials.
+      </p>
+      <br/>
+      <div class="has-text-centered">
+        <img style="width: 100%;" src="static/assets/results_intention.png",
+             alt="results: intention."/>
+      </div>
+      <br/>
+      <div class="has-text-centered">
+        <img style="width: 100%;" src="static/assets/results_topology.png",
+             alt="results: topology."/>
+      </div>
+      <br/>
+    </div>
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <hr/>
+  <div class="container content is-max-desktop">
+    <h2 class="title">BibTeX</h2>
+    <pre style="padding: 1.25em 1.5em">
+<code>@inproceedings{pats,
+  title={Better Aligning Text-to-Image Models with Human Preference},
+  author={Xiaoshi Wu, Keqiang Sun, Feng Zhu, Rui Zhao, Hongsheng Li},
+  TBD
+}</code>
+</pre>
+
+  </div>
+</section>
+
+
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      The website template is borrowed from <a href="https://hypernerf.github.io/" target="_blank">HyperNeRF</a>.
+    </div>
+  </div>
+</footer>
+
+<script>
+  MathJax = {
+    tex: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
+  };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+
+<script type="text/javascript" src="static/slick/slick.min.js"></script>
+</body>
+</html>
